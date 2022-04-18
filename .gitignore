@@ -1,0 +1,7 @@
+!*example
+!README.md
+.DS_Store
+.solargraph.yml
+.envrc
+.venv
+/bin/
