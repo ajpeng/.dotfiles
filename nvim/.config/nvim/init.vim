@@ -35,7 +35,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
+" Themes
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
 
 " LSP autocomplete
 Plug 'neovim/nvim-lspconfig'
@@ -113,8 +115,12 @@ EOF
 
 lua require('ajpeng')
 
+syntax enable
+colorscheme peachpuff
+
+
 "Key-bindings
-let mapleader=" "
+let mapleader="\<Space>"
 nnoremap <leader>s :source ~/.config/nvim/init.vim<CR>
 nnoremap Q <nop>
 
