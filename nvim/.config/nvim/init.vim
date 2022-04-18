@@ -35,7 +35,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " LSP autocomplete
 Plug 'neovim/nvim-lspconfig'
