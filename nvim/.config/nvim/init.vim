@@ -17,7 +17,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a non-default branch
@@ -123,6 +123,8 @@ colorscheme peachpuff
 let mapleader="\<Space>"
 nnoremap <leader>s :source ~/.config/nvim/init.vim<CR>
 nnoremap Q <nop>
+nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
+
 
 " Telescope
 " Find files using Telescope command-line sugar.
@@ -132,16 +134,29 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-" Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+nnoremap <leader>h :wincmd h <cr>
+nnoremap <leader>j :wincmd j <cr>
+nnoremap <leader>k :wincmd k <cr>
+nnoremap <leader>l :wincmd l <cr>
+nnoremap <leader>pv :Sex!<cr>
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
+" most annoying key
+nnoremap q: <nop>
+nnoremap Q <nop>
+
+
 " Resizing
-nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
+
 " Defaults
 set number relativenumber
+nnoremap <Leader>+ :vertical resize +5<CR>
 set noerrorbells
 set shiftwidth=2
 set tabstop=2
@@ -151,3 +166,11 @@ set smartindent
 set nowrap
 set smartcase
 set noswapfile
+
+set nohlsearch
+set hidden
+set incsearch
+set scrolloff=8
+set signcolumn=yes
+
+
