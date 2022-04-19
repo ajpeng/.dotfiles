@@ -15,7 +15,7 @@ require'lspconfig'.gopls.setup{
 
 require'lspconfig'.solargraph.setup{
   on_attach = function(client)
-    client.config.setttings.debounce_text_changes = 150
+    client.config.flags.debounce_text_changes = 500
     vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer=0})
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer=0})
     vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, {buffer=0})
