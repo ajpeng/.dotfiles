@@ -51,6 +51,9 @@ Plug 'hrsh7th/nvim-cmp'
 " Snippets
 Plug 'saadparwaiz1/cmp_luasnip'
 
+" Leetcode 
+Plug 'ianding1/leetcode.vim'
+
 call plug#end()
 
 set completeopt=menu,menuone,noselect
@@ -134,10 +137,29 @@ nnoremap <leader>l :wincmd l <cr>
 nnoremap <leader>pv :Sex!<cr>
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+nnoremap <Leader>+ :vertical resize +9<CR>
+nnoremap <Leader>- :vertical resize -9<CR>
 " most annoying key
 nnoremap q: <nop>
 nnoremap Q <nop>
+" autoclosing brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
+
+" leetcode mappings
+nnoremap <leader>xl :LeetCodeList<cr>
+nnoremap <leader>xt :LeetCodeTest<cr>
+nnoremap <leader>xs :LeetCodeSubmit<cr>
+nnoremap <leader>xi :LeetCodeSignIn<cr>
+let g:leetcode_browser = 'firefox'
+let g:leetcode_hide_paid_only = 1
+let g:leetcode_solution_filetype = 'java'
 
 " Resizing
 nnoremap <Leader>- :vertical resize -5<CR>
@@ -160,5 +182,3 @@ set hidden
 set incsearch
 set scrolloff=8
 set signcolumn=yes
-
-
