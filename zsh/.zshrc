@@ -11,6 +11,12 @@ zstyle :compinstall filename '/home/abc/.zshrc'
 autoload -Uz compinit
 compinit
 
+alias gojo="cd ~/workspace/jobber"
+alias jo1="bin/jobber services up"
+alias jo2="USE_NGROK=true rails s"
+alias jo3="JOBBER_SERVER_HOSTNAME="alexp.ngrok.io" bin/jobber procfile"
+alias gomo="cd ~/workspace/jobber-mobile"
+
 # to handle backspace on urxvt
 TERM=xterm
 

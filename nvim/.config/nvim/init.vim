@@ -109,7 +109,6 @@ lua require('ajpeng')
 syntax enable
 colorscheme peachpuff
 
-
 "Key-bindings
 let mapleader="\<Space>"
 nnoremap <leader>s :source ~/.config/nvim/init.vim<CR>
@@ -119,13 +118,13 @@ nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
 
 " Telescope
 " Find files using Telescope command-line sugar.
-nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
-"noremap <C-p> <cmd>Telescope find_files<cr>
+" nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+noremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').grep_string()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
@@ -137,11 +136,13 @@ nnoremap <leader>l :wincmd l <cr>
 nnoremap <leader>pv :Sex!<cr>
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
-nnoremap <Leader>+ :vertical resize +9<CR>
-nnoremap <Leader>- :vertical resize -9<CR>
+nnoremap <Leader>+ :vertical resize +10<CR>
+nnoremap <Leader>- :vertical resize -10<CR>
+
 " most annoying key
 nnoremap q: <nop>
 nnoremap Q <nop>
+
 " autoclosing brackets
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -151,7 +152,6 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-
 " leetcode mappings
 nnoremap <leader>xl :LeetCodeList<cr>
 nnoremap <leader>xt :LeetCodeTest<cr>
@@ -160,6 +160,11 @@ nnoremap <leader>xi :LeetCodeSignIn<cr>
 let g:leetcode_browser = 'firefox'
 let g:leetcode_hide_paid_only = 1
 let g:leetcode_solution_filetype = 'java'
+
+" yank with Y
+nnoremap Y "+y
+vnoremap Y "+y
+nnoremap yY ^"+y$
 
 " Resizing
 nnoremap <Leader>- :vertical resize -5<CR>
